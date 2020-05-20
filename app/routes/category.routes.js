@@ -12,19 +12,19 @@ module.exports = function(app) {
   
   app.get("/api/category/list",
   [
-    authJwt.verifyToken, authJwt.isAdmin
+    authJwt.verifyToken
   ],
   controller.listCategories);
 
   app.post(
     "/api/category/create",
-    [authJwt.verifyToken, authJwt.isAdmin],
+    [authJwt.verifyToken],
     controller.createCategory
   );
-
+  // , authJwt.isAdmin
   app.delete(
     "/api/category/delete",
-    [authJwt.verifyToken, authJwt.isAdmin],
+    [authJwt.verifyToken],
     controller.deleteCategory
   );
 };

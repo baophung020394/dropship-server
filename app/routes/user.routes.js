@@ -18,7 +18,7 @@ module.exports = function(app) {
   // controller2.listCategories);
 
   app.get(
-    "/api/user/user-detail",
+    "/api/user/user-detail/:id",
     [
       authJwt.verifyToken, authJwt.isAdmin
     ],

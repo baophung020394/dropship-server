@@ -29,9 +29,22 @@ exports.allAccess = (req, res) => {
     res.status(200).send("Public Content.");
 };
 exports.userBoard = (req, res) => {
-    
-    // console.log(res.value())
-    res.status(200).send("User Content.");
+    let id = req.params.id;
+    sequelize
+    .query(
+        `SELECT * FROM users  WHERE id=${id}`
+    , { raw: true, type: sequelize.QueryTypes.SELECT  })
+    .then(users => {
+        // res.send(users)
+        users.forEach(user => {
+            res.json({
+                status: 200,
+                message: "success",
+                result: user
+            })
+          })
+        
+    })
 };
 
 exports.adminBoard = (req, res) => {
