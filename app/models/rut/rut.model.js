@@ -19,7 +19,13 @@ module.exports = (sequelize, Sequelize) => {
         },
         momo: {
             type: Sequelize.STRING
-        }
+        },
+        maRut: {
+            type: Sequelize.STRING
+        },
+        status: {
+            type: Sequelize.STRING
+        },
     });
 
     return Rut;

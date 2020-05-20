@@ -47,7 +47,9 @@ exports.rutCreate = (req, res) => {
     bankName: req.body.bankName,
     accountName: req.body.accountName,
     accountNumber: req.body.accountNumber,
-    momo: req.body.momo
+    momo: req.body.momo,
+    maRut: req.body.maRut,
+    status: req.body.status,
   })
     .then(rut => {
       if(rut) {
